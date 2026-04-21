@@ -1,0 +1,94 @@
+@import './variables.css';
+@import './cv-page.css';
+
+.preview-panel {
+  background: var(--bg-app);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.preview-topbar {
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-form);
+  flex-shrink: 0;
+}
+
+.preview-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.preview-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.page-count {
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+
+.live-dot {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10.5px;
+  color: var(--text-muted);
+}
+
+.live-dot::before {
+  content: '';
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #27ae60;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.preview-scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.preview-scroll::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+.preview-scale-wrap {
+  width: 794px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transform-origin: top center;
+}

@@ -1,0 +1,17 @@
+:root {
+  --accent: #1a1a2e;
+  --accent2: #16213e;
+  --gold: #c9a84c;
+  --bg-app: #f0ede8;
+  --bg-form: #ffffff;
+  --bg-section: #f7f5f1;
+  --border: #ddd9d0;
+  --border-light: #ebe8e2;
+  --text: #1a1a1a;
+  --text-mid: #555;
+  --text-muted: #888;
+  --input-bg: #fafaf8;
+  --input-border: #d8d4cc;
+  --radius: 6px;
+  --radius-lg: 10px;
+}
