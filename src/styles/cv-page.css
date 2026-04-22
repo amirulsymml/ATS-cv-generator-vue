@@ -5,17 +5,18 @@
   padding: 18mm 20mm;
   border: 1px solid #ccc;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
-  font-family: "Calibri", "DM Sans", sans-serif;
+  font-family: 'Aptos', 'Calibri', 'DM Sans', sans-serif;
   color: #1a1a1a;
   line-height: 1.5;
   flex-shrink: 0;
   overflow: hidden;
   text-align: justify;
+  /* page-break-after: always; */
 }
 
 .cv-name {
   text-align: center;
-  font-size: 22pt;
+  font-size: 19pt;
   font-weight: 700;
   color: #111;
   margin-bottom: 5pt;
@@ -25,7 +26,7 @@
 
 .cv-contact {
   text-align: center;
-  font-size: 11pt;
+  font-size: 10pt;
   color: #333;
   margin-bottom: 12pt;
   line-height: 1.65;
@@ -37,7 +38,7 @@
 }
 
 .cv-sec-title {
-  font-size: 9pt;
+  font-size: 11pt;
   font-weight: 700;
   letter-spacing: 0.13em;
   text-transform: uppercase;
@@ -49,7 +50,7 @@
 }
 
 .cv-summary {
-  font-size: 12pt;
+  font-size: 10pt;
   color: #1a1a1a;
   line-height: 1.55;
 }
@@ -68,19 +69,19 @@
 
 .cv-job-title {
   font-weight: 600;
-  font-size: 12pt;
+  font-size: 11pt;
   color: #111;
 }
 
 .cv-job-date {
-  font-size: 10pt;
+  font-size: 9pt;
   color: #555;
   white-space: nowrap;
   margin-left: 8pt;
 }
 
 .cv-job-co {
-  font-size: 11pt;
+  font-size: 10pt;
   color: #444;
   font-style: italic;
   margin-bottom: 3pt;
@@ -93,7 +94,7 @@
 }
 
 .cv-job ul li {
-  font-size: 11pt;
+  font-size: 10pt;
   color: #1a1a1a;
   margin-bottom: 2pt;
   line-height: 1.45;
@@ -113,19 +114,19 @@
 
 .cv-edu-deg {
   font-weight: 600;
-  font-size: 12pt;
+  font-size: 11pt;
   color: #111;
 }
 
 .cv-edu-yr {
-  font-size: 10pt;
+  font-size: 9pt;
   color: #555;
   white-space: nowrap;
   margin-left: 8pt;
 }
 
 .cv-edu-sch {
-  font-size: 11pt;
+  font-size: 10pt;
   color: #444;
   font-style: italic;
 }
@@ -134,7 +135,7 @@
   display: flex;
   gap: 0;
   margin-bottom: 2pt;
-  font-size: 11pt;
+  font-size: 10pt;
   break-inside: avoid;
 }
 
@@ -159,7 +160,7 @@
 }
 
 .cv-cert ul li {
-  font-size: 11pt;
+  font-size: 10pt;
   color: #1a1a1a;
   margin-bottom: 2pt;
   line-height: 1.45;
@@ -177,17 +178,17 @@
 
 .cv-ref-name {
   font-weight: 600;
-  font-size: 12pt;
+  font-size: 11pt;
   color: #111;
 }
 
 .cv-ref-phone {
-  font-size: 11pt;
+  font-size: 10pt;
   color: #444;
 }
 
 .cv-ref-role {
-  font-size: 10pt;
+  font-size: 9pt;
   color: #555;
   font-style: italic;
   line-height: 1.4;

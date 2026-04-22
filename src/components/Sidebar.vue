@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { CVFormData } from '../composables/useCVForm'
+import type { CVData } from '../composables/types'
 
 interface Props {
-  form: CVFormData
+  form: CVData
 }
 
 interface Emits {
@@ -37,7 +37,7 @@ defineEmits<Emits>()
       <div class="sec-hdr">Personal Information</div>
       <div class="field">
         <label>Full Name</label>
-        <input v-model="form.name" placeholder="e.g. Ahmad Faris bin Abdullah" />
+        <input v-model="form.name" placeholder="Your Full Name" />
       </div>
       <div class="two">
         <div class="field">
@@ -52,7 +52,7 @@ defineEmits<Emits>()
       <div class="two">
         <div class="field">
           <label>City, State</label>
-          <input v-model="form.city" placeholder="Kuching, Sarawak" />
+          <input v-model="form.city" placeholder="City, State" />
         </div>
         <div class="field">
           <label>LinkedIn URL</label>
@@ -75,7 +75,7 @@ defineEmits<Emits>()
         <div class="two">
           <div class="field">
             <label>Job Title</label>
-            <input v-model="job.title" placeholder="Software Engineer" />
+            <input v-model="job.title" placeholder="Admin Executive" />
           </div>
           <div class="field">
             <label>Company Name</label>
@@ -85,7 +85,7 @@ defineEmits<Emits>()
         <div class="three">
           <div class="field">
             <label>Location</label>
-            <input v-model="job.location" placeholder="Kuching, Sarawak" />
+            <input v-model="job.location" placeholder="City, State" />
           </div>
           <div class="field">
             <label>From</label>
@@ -109,23 +109,23 @@ defineEmits<Emits>()
       <button class="add-btn" @click="$emit('addJob')">+ Add work experience</button>
 
       <div class="sec-hdr">Education</div>
-      <div v-for="(edu, i) in form.edus" :key="'edu-' + i" class="entry-card">
+      <div v-for="(edu, i) in form.educations" :key="'edu-' + i" class="entry-card">
         <div class="entry-card-top">
           <span>Education {{ i + 1 }}</span>
-          <button v-if="form.edus.length > 1" class="rm-btn" @click="$emit('removeEdu', i)">Remove</button>
+          <button v-if="form.educations.length > 1" class="rm-btn" @click="$emit('removeEdu', i)">Remove</button>
         </div>
         <div class="field">
           <label>Degree / Qualification</label>
-          <input v-model="edu.degree" placeholder="Bachelor of Computer Science" />
+          <input v-model="edu.degree" placeholder="Bachelor of Economics" />
         </div>
         <div class="two">
           <div class="field">
             <label>Institution Name</label>
-            <input v-model="edu.school" placeholder="Universiti Malaysia Sarawak" />
+            <input v-model="edu.school" placeholder="Universiti ..." />
           </div>
           <div class="field">
             <label>Location</label>
-            <input v-model="edu.location" placeholder="Kota Samarahan, Sarawak" />
+            <input v-model="edu.location" placeholder="City, State" />
           </div>
         </div>
         <div class="two">
@@ -147,30 +147,30 @@ defineEmits<Emits>()
         <span style="font-size: 10.5px; color: var(--text-muted); padding: 3px 0">Skills (comma-separated)</span>
       </div>
       <div v-for="(skill, i) in form.skills" :key="'skill-' + i" class="skill-row">
-        <input class="sk-lbl" v-model="skill.label" placeholder="e.g. Programming Languages" />
-        <input class="sk-val" v-model="skill.values" placeholder="Python, JavaScript, SQL..." />
+        <input class="sk-lbl" v-model="skill.label" placeholder="e.g. Microsoft Office" />
+        <input class="sk-val" v-model="skill.values" placeholder="Word, Excel, PowerPoint" />
         <button v-if="form.skills.length > 1" class="rm-btn" @click="$emit('removeSkill', i)" style="padding: 3px 7px">✕</button>
       </div>
       <button class="add-btn" @click="$emit('addSkill')">+ Add skill category</button>
 
       <div class="sec-hdr">Certifications &amp; Training</div>
-      <div v-for="(_, i) in form.certs" :key="'cert-' + i" class="bullet-row" style="margin-bottom: 6px">
+      <div v-for="(_, i) in form.certifications" :key="'cert-' + i" class="bullet-row" style="margin-bottom: 6px">
         <div class="bullet-dot"></div>
-        <input v-model="form.certs[i]" placeholder="e.g. AWS Certified Solutions Architect – Amazon (2023)" />
-        <button v-if="form.certs.length > 1" class="rm-btn" @click="$emit('removeCert', i)" style="padding: 3px 7px">✕</button>
+        <input v-model="form.certifications[i]" placeholder="e.g. AWS Certified Solutions Architect – Amazon (2023)" />
+        <button v-if="form.certifications.length > 1" class="rm-btn" @click="$emit('removeCert', i)" style="padding: 3px 7px">✕</button>
       </div>
       <button class="add-btn" @click="$emit('addCert')">+ Add certification</button>
 
       <div class="sec-hdr">Referees</div>
-      <div v-for="(ref, i) in form.refs" :key="'ref-' + i" class="entry-card">
+      <div v-for="(ref, i) in form.referees" :key="'ref-' + i" class="entry-card">
         <div class="entry-card-top">
           <span>Referee {{ i + 1 }}</span>
-          <button v-if="form.refs.length > 1" class="rm-btn" @click="$emit('removeRef', i)">Remove</button>
+          <button v-if="form.referees.length > 1" class="rm-btn" @click="$emit('removeRef', i)">Remove</button>
         </div>
         <div class="two">
           <div class="field">
             <label>Full Name</label>
-            <input v-model="ref.name" placeholder="Dr. Lim Wei Seng" />
+            <input v-model="ref.name" placeholder="Reference Name" />
           </div>
           <div class="field">
             <label>Phone</label>
@@ -182,7 +182,7 @@ defineEmits<Emits>()
           <input v-model="ref.role" placeholder="Head of Engineering, Tech Company Sdn Bhd" />
         </div>
       </div>
-      <button class="add-btn" v-if="form.refs.length < 4" @click="$emit('addRef')">+ Add referee (max 4)</button>
+      <button class="add-btn" v-if="form.referees.length < 4" @click="$emit('addRef')">+ Add referee (max 4)</button>
     </div>
 
     <div class="sidebar-footer">

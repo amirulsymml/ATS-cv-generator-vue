@@ -18,7 +18,7 @@ export const cvPrintStyles = `
     min-height: 297mm;
     height: auto;
     padding: 68px 76px;
-    font-family: 'Calibri', 'DM Sans', sans-serif;
+    font-family: 'Aptos', 'Calibri', 'DM Sans', sans-serif;
     color: #1a1a1a;
     line-height: 1.5;
     overflow: visible;
@@ -38,7 +38,7 @@ export const cvPrintStyles = `
   /* ── Name & contact ── */
   .cv-name {
     text-align: center;
-    font-size: 22pt;
+    font-size: 19pt;
     font-weight: 700;
     color: #111;
     margin-bottom: 5pt;
@@ -48,9 +48,9 @@ export const cvPrintStyles = `
 
   .cv-contact {
     text-align: center;
-    font-size: 11pt;
+    font-size: 10pt;
     color: #333;
-    margin-bottom: 12pt;
+    margin-bottom: 11pt;
     line-height: 1.65;
   }
 
@@ -74,7 +74,7 @@ export const cvPrintStyles = `
 
   /* ── Summary ── */
   .cv-summary {
-    font-size: 12pt;
+    font-size: 10pt;
     color: #1a1a1a;
     line-height: 1.55;
   }
@@ -94,19 +94,19 @@ export const cvPrintStyles = `
 
   .cv-job-title {
     font-weight: 600;
-    font-size: 12pt;
+    font-size: 11pt;
     color: #111;
   }
 
   .cv-job-date {
-    font-size: 10pt;
+    font-size: 9pt;
     color: #555;
     white-space: nowrap;
     margin-left: 8pt;
   }
 
   .cv-job-co {
-    font-size: 11pt;
+    font-size: 10pt;
     color: #444;
     font-style: italic;
     margin-bottom: 3pt;
@@ -119,7 +119,7 @@ export const cvPrintStyles = `
   }
 
   .cv-job ul li {
-    font-size: 11pt;
+    font-size: 10pt;
     color: #1a1a1a;
     margin-bottom: 2pt;
     line-height: 1.45;
@@ -140,19 +140,19 @@ export const cvPrintStyles = `
 
   .cv-edu-deg {
     font-weight: 600;
-    font-size: 12pt;
+    font-size: 10pt;
     color: #111;
   }
 
   .cv-edu-yr {
-    font-size: 10pt;
+    font-size: 9pt;
     color: #555;
     white-space: nowrap;
     margin-left: 8pt;
   }
 
   .cv-edu-sch {
-    font-size: 11pt;
+    font-size: 10pt;
     color: #444;
     font-style: italic;
   }
@@ -162,7 +162,7 @@ export const cvPrintStyles = `
     display: flex;
     gap: 0;
     margin-bottom: 2pt;
-    font-size: 11pt;
+    font-size: 10pt;
     break-inside: avoid;
   }
 
@@ -188,7 +188,7 @@ export const cvPrintStyles = `
   }
 
   .cv-cert ul li {
-    font-size: 11pt;
+    font-size: 10pt;
     color: #1a1a1a;
     margin-bottom: 2pt;
     line-height: 1.45;
@@ -207,17 +207,17 @@ export const cvPrintStyles = `
 
   .cv-ref-name {
     font-weight: 600;
-    font-size: 12pt;
+    font-size: 10pt;
     color: #111;
   }
 
   .cv-ref-phone {
-    font-size: 11pt;
+    font-size: 10pt;
     color: #444;
   }
 
   .cv-ref-role {
-    font-size: 10pt;
+    font-size: 9pt;
     color: #555;
     font-style: italic;
     line-height: 1.4;
