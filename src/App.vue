@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useCVForm } from './composables/useCVForm'
 import Sidebar from './components/Sidebar.vue'
 import PreviewPanel from './components/PreviewPanel.vue'
@@ -26,11 +26,13 @@ const {
   previewContainer
 } = useCVForm()
 
+const previewPanelRef = ref<InstanceType<typeof PreviewPanel> | null>(null)
+
 onMounted(() => {
-  const scrollEl = document.querySelector('.preview-scroll') as HTMLElement
-  const containerEl = document.querySelector('.preview-scale-wrap') as HTMLElement
-  if (scrollEl) previewScroll.value = scrollEl
-  if (containerEl) previewContainer.value = containerEl
+  if (previewPanelRef.value) {
+    previewScroll.value = previewPanelRef.value.scrollEl
+    previewContainer.value = previewPanelRef.value.containerEl
+  }
 })
 </script>
 
@@ -54,10 +56,6 @@ onMounted(() => {
       @download-d-o-c-x="downloadDOCX"
       @clear-all="clearAll"
     />
-    <PreviewPanel :page-count="pageCount" />
+    <PreviewPanel ref="previewPanelRef" :page-count="pageCount" />
   </div>
 </template>
-
-<style>
-/* Global styles are handled by /src/styles/main.css */
-</style>

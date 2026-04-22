@@ -1,16 +1,18 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 interface Props {
   pageCount: number
 }
 
 withDefaults(defineProps<Props>(), {
-  pageCount: 0
+  pageCount: 0,
 })
 
-defineExpose({
-  scrollEl: null as HTMLElement | null,
-  containerEl: null as HTMLElement | null
-})
+const scrollEl = ref<HTMLElement | null>(null)
+const containerEl = ref<HTMLElement | null>(null)
+
+defineExpose({ scrollEl, containerEl })
 </script>
 
 <template>
@@ -22,12 +24,12 @@ defineExpose({
         <span class="live-dot">Live preview</span>
       </div>
     </div>
-    <div class="preview-scroll">
-      <div class="preview-scale-wrap"></div>
+    <div class="preview-scroll" ref="scrollEl" id="cv-print-area">
+      <div class="preview-scale-wrap" ref="containerEl"></div>
     </div>
   </div>
 </template>
 
-<style scoped>
-@import '../styles/preview.css';
-</style>
+<!-- <style>
+@import "../styles/preview.css";
+</style> -->
