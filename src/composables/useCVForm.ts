@@ -1,5 +1,4 @@
 import { reactive, ref, watch, nextTick } from "vue";
-import { cvPrintStyles, cvScreenStyles } from "./cv-print-styles";
 import { openPrintWindow } from "./cv-print";
 
 export interface Job {
