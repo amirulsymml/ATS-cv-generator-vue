@@ -423,10 +423,10 @@ const MAX_REFEREES = 4;
     <!-- ── Footer ── -->
     <footer class="sidebar-footer">
       <div class="footer-btns">
-        <button class="btn-primary" type="button" @click="emit('printPDF')">
+        <!-- <button class="btn-primary" type="button" @click="emit('printPDF')">
           <i class="fa-regular fa-file-pdf" aria-hidden="true" />
           Download PDF
-        </button>
+        </button> -->
 
         <button
           class="btn-primary btn-docx"
