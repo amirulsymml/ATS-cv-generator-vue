@@ -1,5 +1,8 @@
 @import './variables.css';
 
+/* ─────────────────────────────────────────
+   Layout
+───────────────────────────────────────── */
 .sidebar {
   background: var(--bg-form);
   border-right: 1px solid var(--border);
@@ -8,6 +11,9 @@
   overflow: hidden;
 }
 
+/* ─────────────────────────────────────────
+   Header
+───────────────────────────────────────── */
 .sidebar-header {
   padding: 20px 24px 16px;
   border-bottom: 1px solid var(--border-light);
@@ -26,6 +32,9 @@
   margin-top: 2px;
 }
 
+/* ─────────────────────────────────────────
+   Scrollable form body
+───────────────────────────────────────── */
 .form-body {
   flex: 1;
   overflow-y: auto;
@@ -41,18 +50,21 @@
   border-radius: 2px;
 }
 
+/* ─────────────────────────────────────────
+   Section header
+───────────────────────────────────────── */
 .sec-hdr {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 24px 0 10px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--border-light);
   font-size: 9.5px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin: 24px 0 10px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid var(--border-light);
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 
 .sec-hdr::before {
@@ -62,22 +74,29 @@
   height: 12px;
   background: var(--gold);
   border-radius: 2px;
+  flex-shrink: 0;
 }
 
+/* ─────────────────────────────────────────
+   Field
+───────────────────────────────────────── */
 .field {
   margin-bottom: 9px;
 }
 
 .field label {
   display: block;
+  margin-bottom: 3px;
   font-size: 11px;
   font-weight: 500;
   color: var(--text-mid);
-  margin-bottom: 3px;
 }
 
+/* Shared input/textarea base */
 .field input,
-.field textarea {
+.field textarea,
+.bullet-row input,
+.skill-row input {
   width: 100%;
   padding: 7px 10px;
   font-family: 'DM Sans', sans-serif;
@@ -88,31 +107,39 @@
   border-radius: var(--radius);
   outline: none;
   transition: border-color 0.15s;
-  resize: vertical;
 }
 
 .field input:focus,
-.field textarea:focus {
+.field textarea:focus,
+.bullet-row input:focus,
+.skill-row input:focus {
   border-color: var(--gold);
 }
 
 .field textarea {
   min-height: 62px;
   line-height: 1.5;
+  resize: vertical;
 }
 
-.two {
+/* ─────────────────────────────────────────
+   Grid helpers
+───────────────────────────────────────── */
+.two-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
 
-.three {
+.three-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 8px;
 }
 
+/* ─────────────────────────────────────────
+   Entry cards (jobs, education, referees)
+───────────────────────────────────────── */
 .entry-card {
   background: var(--bg-section);
   border: 1px solid var(--border-light);
@@ -134,15 +161,18 @@
   color: var(--accent);
 }
 
+/* ─────────────────────────────────────────
+   Remove button (shared)
+───────────────────────────────────────── */
 .rm-btn {
-  font-size: 10.5px;
   padding: 3px 9px;
+  font-size: 10.5px;
+  color: var(--text-muted);
+  background: transparent;
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  background: transparent;
-  color: var(--text-muted);
   cursor: pointer;
-  transition: all 0.15s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
 .rm-btn:hover {
@@ -151,28 +181,19 @@
   border-color: #f0c4c4;
 }
 
+/* ─────────────────────────────────────────
+   Bullet rows
+───────────────────────────────────────── */
 .bullet-row {
   display: flex;
+  align-items: center;
   gap: 6px;
   margin-bottom: 5px;
-  align-items: center;
 }
 
 .bullet-row input {
   flex: 1;
-  padding: 6px 9px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  color: var(--text);
   background: var(--bg-form);
-  border: 1px solid var(--input-border);
-  border-radius: var(--radius);
-  outline: none;
-  transition: border-color 0.15s;
-}
-
-.bullet-row input:focus {
-  border-color: var(--gold);
 }
 
 .bullet-dot {
@@ -183,47 +204,36 @@
   flex-shrink: 0;
 }
 
+/* ─────────────────────────────────────────
+   Skill rows
+───────────────────────────────────────── */
 .skill-row {
   display: flex;
+  align-items: center;
   gap: 6px;
   margin-bottom: 6px;
-  align-items: center;
+}
+
+.skill-row input {
+  background: var(--bg-form);
 }
 
 .skill-row input.sk-lbl {
   width: 155px;
   flex-shrink: 0;
-  padding: 6px 9px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  color: var(--text);
-  background: var(--bg-form);
-  border: 1px solid var(--input-border);
-  border-radius: var(--radius);
-  outline: none;
-  transition: border-color 0.15s;
 }
 
 .skill-row input.sk-val {
   flex: 1;
-  padding: 6px 9px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  color: var(--text);
-  background: var(--bg-form);
-  border: 1px solid var(--input-border);
-  border-radius: var(--radius);
-  outline: none;
-  transition: border-color 0.15s;
 }
 
-.skill-row input:focus {
-  border-color: var(--gold);
-}
-
+/* ─────────────────────────────────────────
+   Add button
+───────────────────────────────────────── */
 .add-btn {
   width: 100%;
   padding: 7px;
+  margin-top: 2px;
   font-family: 'DM Sans', sans-serif;
   font-size: 12px;
   color: var(--text-mid);
@@ -231,8 +241,7 @@
   border: 1px dashed var(--border);
   border-radius: var(--radius);
   cursor: pointer;
-  margin-top: 2px;
-  transition: all 0.15s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
 .add-btn:hover {
@@ -241,6 +250,9 @@
   color: var(--text);
 }
 
+/* ─────────────────────────────────────────
+   Footer
+───────────────────────────────────────── */
 .sidebar-footer {
   padding: 14px 24px;
   border-top: 1px solid var(--border-light);
@@ -252,22 +264,29 @@
   gap: 8px;
 }
 
-.btn-primary {
-  flex: 1;
-  padding: 10px;
+/* ─────────────────────────────────────────
+   Footer buttons
+───────────────────────────────────────── */
+.btn-primary,
+.btn-secondary {
   font-family: 'DM Sans', sans-serif;
-  font-size: 12.5px;
-  font-weight: 500;
-  background: var(--accent);
-  color: #fff;
-  border: none;
   border-radius: var(--radius);
   cursor: pointer;
+  transition: background 0.15s;
+}
+
+.btn-primary {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  transition: background 0.15s;
+  padding: 10px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--accent);
+  border: none;
 }
 
 .btn-primary:hover {
@@ -284,15 +303,11 @@
 
 .btn-secondary {
   padding: 10px 16px;
-  font-family: 'DM Sans', sans-serif;
   font-size: 13px;
   font-weight: 500;
-  background: transparent;
   color: var(--text-mid);
+  background: transparent;
   border: 1px solid var(--border);
-  border-radius: var(--radius);
-  cursor: pointer;
-  transition: background 0.15s;
 }
 
 .btn-secondary:hover {
